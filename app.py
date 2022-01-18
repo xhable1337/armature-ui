@@ -6,7 +6,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFontDatabase, QPixmap
 from PyQt5.QtWidgets import QApplication, QLineEdit, QMainWindow, QGraphicsPixmapItem, QGraphicsScene
 
-from ui import mainwindow
+from ui import mainwindow, table, info
 from resources import resource_path, Values
 from db_worker import DBWorker
 
@@ -25,9 +25,16 @@ class ExampleApp(QMainWindow, mainwindow.Ui_MainWindow):
         
         # Подключение клавиши расчёта к функции
         self.pushButton.clicked.connect(self.count)
+        
+        # Подключение остальных клавиш к функциям
+        self.tableButton.clicked.connect(self.show_table)
+        self.helpButton.clicked.connect(self.show_info)
 
         # Создание инстанса класса для взаимодействия с базой данных
         self.db = DBWorker(resource_path('database.sqlite'))
+        
+        self.table_window = table.Ui_Dialog()
+        self.info_window = info.Ui_Dialog()
         
         # Создание сцены для картинки
         pixmap = QPixmap()
@@ -72,6 +79,15 @@ class ExampleApp(QMainWindow, mainwindow.Ui_MainWindow):
                 return float(field.placeholderText())
             else:
                 return None
+    
+    
+    def show_table(self):
+        self.table_window.show()
+        self.table_window.table_zoom.fitInView(self.table_window.scene_table.itemsBoundingRect(), Qt.KeepAspectRatio)
+
+
+    def show_info(self):
+        self.info_window.show()
 
 
     def __get_numbers_from_fields(self) -> Values:

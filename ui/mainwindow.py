@@ -303,6 +303,25 @@ class Ui_MainWindow(object):
         self.sizes_2.setObjectName("sizes_2")
         self.gridLayout_10 = QtWidgets.QGridLayout(self.sizes_2)
         self.gridLayout_10.setObjectName("gridLayout_10")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.tableButton = QtWidgets.QPushButton(self.sizes_2)
+        font = QtGui.QFont()
+        font.setFamily("Circe Bold")
+        font.setPointSize(17)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.tableButton.setFont(font)
+        self.tableButton.setObjectName("tableButton")
+        self.horizontalLayout_2.addWidget(self.tableButton)
+        self.helpButton = QtWidgets.QPushButton(self.sizes_2)
+        font = QtGui.QFont()
+        font.setFamily("Circe Bold")
+        font.setPointSize(17)
+        font.setStyleStrategy(QtGui.QFont.PreferDefault)
+        self.helpButton.setFont(font)
+        self.helpButton.setObjectName("helpButton")
+        self.horizontalLayout_2.addWidget(self.helpButton)
+        self.gridLayout_10.addLayout(self.horizontalLayout_2, 3, 0, 1, 1)
         self.answer_text_3 = QtWidgets.QTextBrowser(self.sizes_2)
         self.answer_text_3.setMinimumSize(QtCore.QSize(0, 113))
         self.answer_text_3.setStyleSheet("    border-style: outset;\n"
@@ -312,15 +331,15 @@ class Ui_MainWindow(object):
 "    background: transparent;")
         self.answer_text_3.setObjectName("answer_text_3")
         self.gridLayout_10.addWidget(self.answer_text_3, 0, 0, 1, 1)
-        self.gridLayout_7.addWidget(self.sizes_2, 2, 0, 1, 2)
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton = QtWidgets.QPushButton(self.sizes_2)
         font = QtGui.QFont()
         font.setFamily("Circe Bold")
         font.setPointSize(17)
         font.setStyleStrategy(QtGui.QFont.PreferDefault)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
-        self.gridLayout_7.addWidget(self.pushButton, 3, 0, 1, 2)
+        self.gridLayout_10.addWidget(self.pushButton, 1, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.sizes_2, 2, 0, 1, 2)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -330,7 +349,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Калькулятор арматуры"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Расчёт сечения арматуры"))
         self.task_text.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -378,9 +397,11 @@ class Ui_MainWindow(object):
         self.label_52.setText(_translate("MainWindow", "A\'s = "))
         self.label_51.setText(_translate("MainWindow", "мм²"))
         self.sizes_2.setTitle(_translate("MainWindow", "Результат"))
+        self.tableButton.setText(_translate("MainWindow", "Таблица сортамента"))
+        self.helpButton.setText(_translate("MainWindow", "Помощь"))
         self.answer_text_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'Circe ExtraBold\'; font-size:14pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'MS Shell Dlg 2\'; font-size:8.25pt;\"><br /></p></body></html>"))
         self.pushButton.setText(_translate("MainWindow", "Рассчитать"))
